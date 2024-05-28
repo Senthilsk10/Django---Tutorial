@@ -1,7 +1,8 @@
 from django.shortcuts import render,redirect,get_object_or_404
 from .models import Movie
 from .forms import MovieForm
-
+from .serializer import MovieSerializer
+from rest_framework import generics
 
 
 def movie_list(request):
@@ -39,3 +40,12 @@ def movie_delete(request, id):
         movie.delete()
         return redirect('movie_list')
     return render(request, 'movie_confirm_delete.html', {'movie': movie})
+
+
+
+class MovieListCreateView(generics.ListCreateAPIView):
+    queryset = Movie.objects.all()
+    serializer_class = MovieSerializer
+class MovieDetailView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Movie.objects.all()
+    serializer_class = MovieSerializer

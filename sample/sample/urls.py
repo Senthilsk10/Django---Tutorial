@@ -25,4 +25,7 @@ urlpatterns = [
     path('movie/new/', movie_create, name='movie_create'),
     path('movie/<int:id>/edit/', movie_update, name='movie_update'),
     path('movie/<int:id>/delete/', movie_delete, name='movie_delete'),
+    path('movies/',MovieListCreateView.as_view(),name="movies"),
+    path('movies/<int:pk>/',MovieDetailView.as_view(),name="movies_detail"),
+    
 ]
