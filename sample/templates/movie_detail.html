@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ movie.name }}</title>
+</head>
+<body>
+    <h1>{{ movie.name }}</h1>
+    <p>Year: {{ movie.year }}</p>
+    <p>Actor: {{ movie.actor }}</p>
+    <p>Actress: {{ movie.actress }}</p>
+    <a href="{% url 'movie_list' %}">Back to list</a>
+</body>
+</html>
