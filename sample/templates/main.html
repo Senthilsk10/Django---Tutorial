@@ -4,8 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
 </head>
-<body>
-    <h2>Hello {{name}}</h2>
+<body >
+    {% if name %}
+    <div class="bg-info">
+        <h2 >Hello {{name}}</h2>
+    </div>
+    {% else %}
+    <div class="bg-danger">
+        <h2 >Hello World</h2>
+    </div>
+    {% endif %}
+
+    
 </body>
 </html>
