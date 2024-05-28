@@ -1,9 +1,7 @@
 from django.shortcuts import render
+from .models import Movie
+
 
 def initial(request):
-    items = ["carrot","beetroot","potato"]
-    dict_items = {
-        "name":"senthil",
-        "age":20
-    }
-    return render(request,"main.html",{"items":items,"d_items":dict_items})
+    movies = Movie.objects.all()
+    return render(request,"main.html",{"movies":movies})

@@ -9,21 +9,15 @@
     {% bootstrap_javascript %}
 </head>
 <body >
-    <h5>We got {{items|length }} items in list</h5> 
-    <ol>
-    {% for item in items %}
-    <li>{{item|upper}}</li>
+    {% for movie in movies %}
+    <div class="card">
+        <div class="card-body">
+            <h2 class="card-title">Movie name: {{ movie.name }}</h2>
+            <h4 class="card-subtitle mb-2 text-muted">Year: {{ movie.year|date:"Y" }}</h4>
+            <p class="card-text"><strong>Actor:</strong> {{ movie.actor }}</p>
+            <p class="card-text"><strong>Actress:</strong> {{ movie.actress }}</p>
+        </div>
+    </div>
     {% endfor %}
-    </ol>
-
-    {# this won't be displayed #}
-
-    <ol>
-        {% for key,value in d_items.items %}
-        <li>{{key}} &nbsp;:&nbsp; {{value}}</li>
-        {% endfor %}
-        </ol>
-
-    
 </body>
 </html>
