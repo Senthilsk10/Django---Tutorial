@@ -9,9 +9,10 @@
     {% bootstrap_javascript %}
 </head>
 <body >
+    <h5>We got {{items|length }} items in list</h5> 
     <ol>
     {% for item in items %}
-    <li>{{item}}</li>
+    <li>{{item|upper}}</li>
     {% endfor %}
     </ol>
 
