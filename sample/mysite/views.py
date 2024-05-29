@@ -6,7 +6,8 @@ from rest_framework import generics
 
 
 def movie_list(request):
-    prof = profile.objects.get(id = request.user.id)
+    
+    prof = get_object_or_404(profile,id = request.user.id)
     movies = Movie.objects.all()
     return render(request, 'movie_list.html', {'movies': movies,'prof':prof})
 
